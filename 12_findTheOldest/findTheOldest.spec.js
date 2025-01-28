@@ -1,6 +1,10 @@
 const findTheOldest = require('./findTheOldest')
 
 describe('findTheOldest', () => {
+  test('works with empty array!', () => {
+    const people = [ ];
+    expect(findTheOldest(people)).toBe('Error');
+  });
   test('finds the person with the greatest age!', () => {
     const people = [
       {
@@ -21,7 +25,7 @@ describe('findTheOldest', () => {
     ]
     expect(findTheOldest(people).name).toBe('Ray');
   });
-  test.skip('finds the oldest person if yearOfDeath field is undefined on a non-oldest person', () => {
+  test('finds the oldest person if yearOfDeath field is undefined on a non-oldest person', () => {
     const people = [
       {
         name: "Carly",
@@ -40,7 +44,7 @@ describe('findTheOldest', () => {
     ]
     expect(findTheOldest(people).name).toBe('Ray');
   });
-  test.skip('finds the oldest person if yearOfDeath field is undefined for the oldest person', () => {
+  test('finds the oldest person if yearOfDeath field is undefined for the oldest person', () => {
     const people = [
       {
         name: "Carly",
